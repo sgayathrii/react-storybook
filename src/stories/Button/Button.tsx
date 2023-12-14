@@ -1,20 +1,20 @@
 import "./button.css";
 
-export enum ButtonSize {
-  SMALL = "small",
-  MEDIUM = "medium",
-  LARGE = "large",
-}
 
 export type ButtonProps = {
   button: {
     text: string;
-    size?: ButtonSize;
+    size?: 'small' | 'medium' | 'large';
+    primary?: boolean;
+    onClick?: () => void;
   };
 };
 
-const Button = ({ button: { text, size } }: ButtonProps) => {
-  return <button className="button">{text}</button>;
+const Button = ({ button: { text, size, primary = false, onClick } }: ButtonProps) => {
+
+  const mode = primary ? 'button--primary' : 'button--secondary';
+
+  return <button onClick={onClick} className={['button', `button--${size}`, mode].join(' ')}>{text}</button>;
 };
 
 export default Button;

@@ -1,27 +1,26 @@
-import Button from './Button';
+import Button from "./Button";
 
 export default {
   component: Button,
-  title: 'button',
-  tags: ['autodocs'],
+  title: "button",
+  tags: ["autodocs"],
 };
-
-
 
 export const Primary = {
   args: {
     button: {
       text: "Submit",
-      size: 'medium',
+      size: "medium",
+      primary: true,
     },
-  }
-}
+  },
+};
 
 export const Secondary = {
   args: {
     button: {
-      text: "Submit",
-      size: 'large',
+      text: "Reset",
+      size: "small",
     },
-  }
-}
+  },
+};
